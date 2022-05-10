@@ -2,7 +2,7 @@
 # https://docs.github.com/es/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#creating-issue-forms
 name: Bug Report
 description: File a bug report
-title: "[Bug]: TODO Tittle for your bug"
+title: "Bug summary"
 # TODO Review the labels to be assigned
 labels: ["bug", "triage"]
 # TODO Update assignees list
@@ -13,14 +13,21 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: your.email@host.com
-    validations:
-      required: false
+
+        The Buf is structured in the following sections:
+
+        - What happened? Describe briefly what is wrong.
+        - How to replay it? Descrine how to replay as a list of
+          steps to carry on.
+        - What do you get? Describe the result you are getting
+          after the steps. Paste here error messages you got,
+          screenshots, etc...
+        - What do you expect? Describe the expected result.
+        - Additional information. Here you can add files
+          logs, any other information that could helps.
+
+          > Add code snipets to make to the community
+          > the life easier.
   - type: textarea
     id: summary
     attributes:
@@ -69,15 +76,6 @@ body:
       placeholder: Tell us what you expect
       value: |
         I expect . . .
-    validations:
-      required: true
-  - type: dropdown
-    id: branch
-    attributes:
-      label: Branch
-      description: What branch of your software are you runnind?
-      options:
-        - master (Default)
     validations:
       required: true
   - type: input
