@@ -44,7 +44,7 @@ body:
     id: steps-to-replay
     attributes:
       label: Steps to replay the issue
-      description: |
+      description: >
         Describe as a sequence of actions what is necessary
         to replay the issue.
       placeholder: Tell us how to replay it
@@ -59,7 +59,7 @@ body:
     id: what-you-get
     attributes:
       label: What do you get?
-      description: |
+      description: >
         Describe the wrong result that you get after the steps
         to replay the issue.
       placeholder: Tell us how do you get
@@ -71,7 +71,7 @@ body:
     id: what-you-expect
     attributes:
       label: What did you expect?
-      description: |
+      description: >
         Describe what you expect
       placeholder: Tell us what you expect
       value: |
@@ -84,7 +84,7 @@ body:
       label: Commit
       # TODO Update this description to retrieve the commit revision from the
       #      container image
-      description: |
+      description: >
         The repository commit that evoked the bug.
         You can retrieve this from the container image by:
         `docker inspect YOUR_IMAGE | jq '{.labels."io.opencontainers.image.revision"}'`
@@ -94,7 +94,7 @@ body:
     attributes:
       label: Relevant log output
       # TODO Add descriptions how to retrieve the app/service logs
-      description: |
+      description: >
         Please copy and paste any relevant log output. This will be automatically formatted
         into code, so no need for backticks.
       render: Shell
@@ -103,7 +103,9 @@ body:
     attributes:
       label: Code of Conduct
       # TODO Update link to the code of conduct that is stored into the repository
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      description: >
+        By submitting this issue, you agree to follow our
+        [Code of Conduct](https://example.com)
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
