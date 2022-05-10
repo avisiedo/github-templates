@@ -1,0 +1,48 @@
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+# https://docs.github.com/es/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#creating-issue-forms
+name: PR Report
+description: File a PR report
+title: "[PR]: TODO Update with your title"
+# TODO Review the labels to be assigned
+labels: ["awaiting-review"]
+# TODO Update assignees list
+assignees:
+  - github-username
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to provide this pull request!
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: |
+        Enumerate what is provided by this change. Keep logical changes
+        together in the pull request, or break them down in different logical
+        pull requests if it is needed.
+      placeholder: Summary
+      value: |
+        Indicate what is provided by this change:
+        - Add ...
+        - Update ...
+        - Delete ...
+    validations:
+      required: true
+  - type: input
+    id: issue-link
+    attributes:
+      label: Related ticket issue
+      description: Paste here the link to the related ticket issue
+      placeholder: https://github.com/USER_ORG/REPO/issues/XXXXX
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      # TODO Update the link to the code of conduct stored in your repository
+      description: By submitting this pull request, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
