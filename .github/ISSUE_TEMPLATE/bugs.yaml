@@ -1,0 +1,111 @@
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+# https://docs.github.com/es/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#creating-issue-forms
+name: Bug Report
+description: File a bug report
+title: "[Bug]: TODO Tittle for your bug"
+# TODO Review the labels to be assigned
+labels: ["bug", "triage"]
+# TODO Update assignees list
+assignees:
+  - github-username
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: your.email@host.com
+    validations:
+      required: false
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Brief description about the issue that you found
+      placeholder: Tell us what did you see!
+      value: |
+       A brief description about the issue. Remember that you have a
+       field to describe the steps to replay the issue, and the current
+       result and the expected one.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-replay
+    attributes:
+      label: Steps to replay the issue
+      description: |
+        Describe as a sequence of actions what is necessary
+        to replay the issue.
+      placeholder: Tell us how to replay it
+      value: |
+        1. First step.
+        2. Second step.
+        ...
+        N. N step.
+    validations:
+      required: true
+  - type: textarea
+    id: what-you-get
+    attributes:
+      label: What do you get?
+      description: |
+        Describe the wrong result that you get after the steps
+        to replay the issue.
+      placeholder: Tell us how do you get
+      value: |
+        I get . . .
+    validations:
+      required: true
+  - type: textarea
+    id: what-you-expect
+    attributes:
+      label: What did you expect?
+      description: |
+        Describe what you expect
+      placeholder: Tell us what you expect
+      value: |
+        I expect . . .
+    validations:
+      required: true
+  - type: dropdown
+    id: branch
+    attributes:
+      label: Branch
+      description: What branch of your software are you runnind?
+      options:
+        - master (Default)
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      # TODO Update this description to retrieve the commit revision from the
+      #      container image
+      description: |
+        The repository commit that evoked the bug.
+        You can retrieve this from the container image by:
+        `docker inspect YOUR_IMAGE | jq '{.labels."io.opencontainers.image.revision"}'`
+      placeholder: git rev-parse HEAD
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      # TODO Add descriptions how to retrieve the app/service logs
+      description: |
+        Please copy and paste any relevant log output. This will be automatically formatted
+        into code, so no need for backticks.
+      render: Shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      # TODO Update link to the code of conduct that is stored into the repository
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
