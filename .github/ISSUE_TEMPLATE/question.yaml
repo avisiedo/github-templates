@@ -1,0 +1,45 @@
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+# https://docs.github.com/es/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#creating-issue-forms
+name: Question
+description: File a question about the component/product
+title: "[Question]: TODO Title for your question"
+labels: ["question"]
+# TODO Add here the list of assignees
+assignees:
+  - github-user
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this form to add a question or describe any doubt you have
+        about the product/service stored in this repository.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: |
+        Desribe your doubt or redact your question
+      placeholder: Summary
+      value: |
+        Indicate what is provided by this change:
+        - Add ...
+        - Update ...
+        - Delete ...
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
